@@ -1,0 +1,15 @@
+def removeDuplicate(nums):  #make a function with two args
+    if not nums:
+        return 0
+    
+    position = 1
+    for i in range(1, len(nums)):  #check in the length of nums{array}
+        if nums[i] != nums[i-1]:
+            nums[position] = nums[i] #if the positional element equal to nums{array[i]}
+            position += 1
+            
+    return position     #returns the position
+
+nums = [0,0,1,1,1,2,2,3,3,4]         #testcase_nums
+k = removeDuplicate(nums)            #call function
+print(f"k = {k}, nums = {nums[:k]}")   #print the output
