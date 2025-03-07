@@ -1,0 +1,12 @@
+def searchInsert(nums, target):    #function with two args
+    if target in nums:              #logic
+        return nums.index(target)
+    else:
+        nums.append(target)
+        nums.sort()
+        return nums.index(target)
+    
+nums =[1,3,5,6]               #testcase_array
+target = 2                    #testcase_target
+result = searchInsert(nums, target)    
+print(result)                 #output
