@@ -1,0 +1,13 @@
+def twoSum(arr, target):       #make a function with two args 
+    for i in range(len(arr)):  #make a loop where it can go through all the items
+        for j in range(i + 1, len(arr)):  
+            
+            if arr[i] + arr[j] == target:    #item added to give the target
+                return [i, j]
+    return[]     
+#that is our code, now we'll test it out.
+    
+arr = [1, 2, 3, 7, 5]      #testcase_arr
+target = 4                 #testcase_target
+result = twoSum(arr, target)   #calls the function
+print(result)              #print result
