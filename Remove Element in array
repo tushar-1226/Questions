@@ -1,0 +1,14 @@
+def removeElement(nums, val):  # nums is a list of integers, val is an integer
+    position = 0               # position is an integer
+    for i in range(len(nums)):     # i is an integer
+        if nums[i] != val:             # if num[i] is not equal to val
+            nums[position] = nums[i]    # nums[position] is equal to nums[i]
+            
+            position += 1     #position is incremented by 1
+    return position
+
+nums = [3,2,2,3]         #example input
+val = 3
+k = removeElement(nums, val)
+print(f"k = {k}, nums = {nums[:k]}")    #output
+            
