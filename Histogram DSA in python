@@ -1,0 +1,23 @@
+def max_area_histogram_naive(heights):     #create a function 
+    n = len(heights)
+    max_area = 0
+    
+    for i in range(n):      #loop 
+        
+        left = i             #left side of the histogram
+        while left > 0 and heights[left-1] >= heights[i]:
+            left -= 1
+            
+            
+        right = i            #right side of the histogram
+        while right < n-1 and heights[right +1] >= heights[i]:
+            right += 1
+            
+        width = right - left + 1
+        max_area = max(max_area, width * heights[i])     #area of the histogram(rectangle area = l*b)
+            
+        
+    return max_area
+
+heights = [60, 20, 50, 40, 10, 50, 60]      #Testcase you can call another testcase
+print (max_area_histogram_naive(heights))   #Call the function
