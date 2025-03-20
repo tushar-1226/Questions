@@ -1,0 +1,33 @@
+def leftsmaller(arr, n, SE):    #Create a fucntion
+
+	sta = []      #Create an  empty stack
+
+	for i in range(n):      #Write a loop
+
+		while(sta != [] and sta[len(sta)-1] >= arr[i]):   #logic of code 
+			sta.pop()
+
+		if(sta != []):
+			SE[i]=sta[len(sta)-1]
+
+		else:
+			SE[i] = 0
+
+		sta.append(arr[i])
+
+def findMaxDiff(arr, n):         #find MAX Difference
+	ls=[0]*n 
+	rs=[0]*n 
+
+
+	leftsmaller(arr, n, ls)        
+	leftsmaller(arr[::-1], n, rs)     
+
+	res = -1
+	for i in range(n):
+		res = max(res, abs(ls[i] - rs[n-1-i]))
+	return res
+
+if __name__=='__main__':                #testcase
+	arr = [2, 4, 8, 7, 7, 9, 3]
+	print ("Maximum Diff :", findMaxDiff(arr, len(arr)))
