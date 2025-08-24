@@ -1,0 +1,23 @@
+## Print 1 to n using recursion
+
+def print_1_to_n(n):
+    if n == 0: ##Base case
+      return
+    print_1_to_n(n-1)
+    print(n)
+    return
+print(print_1_to_n(10))
+
+## In recusrion we make a base case to avoid infinite running 
+
+## Print n to 1 using recursion
+
+def print_n_to_1(n):
+    if n == 0:
+      return
+    print(n)
+    print_n_to_1(n-1)
+
+print(print_n_to_1(10))
+
+
