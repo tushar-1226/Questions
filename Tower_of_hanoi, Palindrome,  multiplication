@@ -1,0 +1,51 @@
+#Tower of hanoi
+ def tower_hanoi(n, a, b, c):
+     if n == 1:
+         print("Move ",n," disk from", a, "to", c )
+         return
+     tower_hanoi(n-1, a, c, b)
+     print("Move", n, "disk from", a, "to", c)
+     tower_hanoi(n-1, b, a, c)
+    
+ print(tower_hanoi(5, "s", "h", "d"))
+
+
+## Checks if palindrome or not
+
+ def isPalindrome(s: str) -> bool:
+    
+     def helper(text, start, end):
+         if start >= end:
+             return True
+        
+         if text[start] != text[end]:
+             return False
+        
+         return helper(text, start+1, end-1)
+    
+     return helper(s, 0, len(s)-1)
+
+ print(isPalindrome("racecar"))
+
+
+# Sum of digit
+
+ def sum_of_digits(n: int) -> int:
+    
+     if n == 0:
+         return 0
+    
+     return (n % 10) + sum_of_digits(n // 10)
+
+ print(sum_of_digits(12345))
+
+# multiplication without operators
+
+ def multiply(a: int, b: int) -> int:
+    
+     if b == 0:
+         return 0
+    
+     return a + multiply(a, b-1)
+    
+ print(multiply(10, 4))
